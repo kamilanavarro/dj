@@ -2,115 +2,519 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #efe7da;
-  color: #181818;
+  background: #eee5d7;
+  color: #211c18;
   transition:
-    background 0.5s ease,
-    color 0.5s ease;
+    background 0.7s ease,
+    color 0.7s ease;
 }
 
 body.night-mode {
-  background: #101010;
-  color: #f3efe8;
-}
-
-.hero {
-  min-height: 100vh;
-  padding: 30px 5vw 60px;
-  display: flex;
-  flex-direction: column;
-}
-
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-size: 1.2rem;
-}
-
-.mode-toggle {
-  border: 1px solid currentColor;
-  background: transparent;
-  color: inherit;
-  padding: 10px 16px;
-  border-radius: 999px;
-  cursor: pointer;
-}
-
-.hero-content {
-  margin-top: auto;
-  max-width: 900px;
-}
-
-.eyebrow,
-.section-label,
-.set-type {
-  font-size: 0.75rem;
-  letter-spacing: 0.16em;
-}
-
-h1 {
-  font-size: clamp(5rem, 15vw, 13rem);
-  line-height: 0.82;
-  margin: 20px 0;
-  font-weight: 500;
-}
-
-.hero-copy {
-  max-width: 500px;
-  font-size: 1.25rem;
-  line-height: 1.5;
-}
-
-.sets,
-.contact {
-  padding: 100px 5vw;
-}
-
-.set-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-  margin-top: 50px;
-}
-
-.set-card {
-  border-top: 1px solid currentColor;
-  padding-top: 20px;
-}
-
-.set-image {
-  aspect-ratio: 4 / 3;
-  background: rgba(0, 0, 0, 0.08);
-  margin-bottom: 20px;
-}
-
-body.night-mode .set-image {
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.set-card h2 {
-  font-size: 2rem;
-}
-
-.social-links {
-  display: flex;
-  gap: 25px;
-  margin-top: 40px;
+  background: #0d0c0b;
+  color: #f2eadf;
 }
 
 a {
   color: inherit;
 }
 
+
+/* -------------------------
+   HERO
+------------------------- */
+
+.hero {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  padding: 30px 5vw 42px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+/* -------------------------
+   NAV
+------------------------- */
+
+.nav {
+  position: relative;
+  z-index: 10;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: inherit;
+  text-decoration: none;
+
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.mini-sparkle {
+  display: inline-block;
+  margin-left: 3px;
+}
+
+
+/* -------------------------
+   DAY / NIGHT TOGGLE
+------------------------- */
+
+.mode-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  border: 0;
+  background: transparent;
+  color: inherit;
+
+  padding: 0;
+
+  font: inherit;
+  cursor: pointer;
+}
+
+.toggle-option {
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  opacity: 0.38;
+
+  transition: opacity 0.4s ease;
+}
+
+.day-mode .day-label {
+  opacity: 1;
+}
+
+.night-mode .night-label {
+  opacity: 1;
+}
+
+.toggle-track {
+  position: relative;
+
+  width: 42px;
+  height: 22px;
+
+  border: 1px solid currentColor;
+  border-radius: 999px;
+}
+
+.toggle-dot {
+  position: absolute;
+
+  width: 14px;
+  height: 14px;
+
+  left: 3px;
+  top: 3px;
+
+  border-radius: 50%;
+  background: currentColor;
+
+  transition: transform 0.45s ease;
+}
+
+.night-mode .toggle-dot {
+  transform: translateX(20px);
+}
+
+
+/* -------------------------
+   ABSTRACT BACKGROUND
+------------------------- */
+
+.hero-atmosphere {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  border-radius: 50%;
+
+  filter: blur(70px);
+
+  transition:
+    background 0.8s ease,
+    opacity 0.8s ease,
+    transform 1s ease;
+}
+
+
+/* Daytime sunlight */
+
+.glow-one {
+  width: 48vw;
+  height: 48vw;
+
+  right: -12vw;
+  top: 4vh;
+
+  background: rgba(255, 199, 104, 0.24);
+}
+
+.glow-two {
+  width: 32vw;
+  height: 32vw;
+
+  left: -10vw;
+  bottom: -8vw;
+
+  background: rgba(255, 255, 255, 0.42);
+}
+
+
+/* Nighttime glow */
+
+.night-mode .glow-one {
+  background: rgba(222, 87, 31, 0.22);
+
+  transform:
+    translate(-5vw, 15vh)
+    scale(0.8);
+}
+
+.night-mode .glow-two {
+  background: rgba(125, 54, 31, 0.18);
+
+  transform:
+    translate(25vw, -15vh)
+    scale(1.3);
+}
+
+
+/* subtle texture */
+
+.grain {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.11;
+
+  background-image:
+    radial-gradient(
+      rgba(0, 0, 0, 0.12) 0.6px,
+      transparent 0.6px
+    );
+
+  background-size: 5px 5px;
+
+  mix-blend-mode: multiply;
+}
+
+.night-mode .grain {
+  opacity: 0.08;
+  mix-blend-mode: screen;
+}
+
+
+/* -------------------------
+   HERO CONTENT
+------------------------- */
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+}
+
+.eyebrow {
+  margin: 0 0 22px;
+
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+}
+
+
+/* -------------------------
+   WORDMARK
+------------------------- */
+
+.wordmark {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: nowrap;
+
+  margin: 0;
+
+  font-family: Arial, sans-serif;
+
+  font-size: clamp(4.4rem, 13.4vw, 13rem);
+  font-weight: 900;
+
+  letter-spacing: -0.075em;
+  line-height: 0.82;
+
+  white-space: nowrap;
+}
+
+
+/* DAY:
+   PRINCESS = filled
+   K = outline
+   sparkle = filled
+*/
+
+.word-princess {
+  color: #211c18;
+
+  -webkit-text-stroke: 0 transparent;
+
+  transition:
+    color 0.6s ease,
+    -webkit-text-stroke 0.6s ease;
+}
+
+.word-k {
+  margin-left: 0.08em;
+
+  color: transparent;
+
+  -webkit-text-stroke:
+    2px #211c18;
+
+  transition:
+    color 0.6s ease,
+    -webkit-text-stroke 0.6s ease;
+}
+
+.sparkle {
+  align-self: flex-start;
+
+  margin-left: 0.18em;
+  margin-top: -0.1em;
+
+  color: #211c18;
+
+  font-size: 0.18em;
+  line-height: 1;
+
+  transition:
+    color 0.6s ease,
+    -webkit-text-stroke 0.6s ease;
+}
+
+
+/* NIGHT:
+   PRINCESS = outline
+   K = filled
+   sparkle = outline
+*/
+
+.night-mode .word-princess {
+  color: transparent;
+
+  -webkit-text-stroke:
+    2px #f2eadf;
+}
+
+.night-mode .word-k {
+  color: #f2eadf;
+
+  -webkit-text-stroke:
+    0 transparent;
+}
+
+.night-mode .sparkle {
+  color: transparent;
+
+  -webkit-text-stroke:
+    1px #f2eadf;
+}
+
+
+/* -------------------------
+   HERO TAGLINE
+------------------------- */
+
+.hero-bottom {
+  margin-top: 44px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.tagline {
+  margin: 0;
+
+  font-size: clamp(1.15rem, 2vw, 1.8rem);
+  font-weight: 700;
+
+  letter-spacing: 0.02em;
+  line-height: 1.08;
+}
+
+.location {
+  margin: 0;
+
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+}
+
+
+/* -------------------------
+   SCROLL
+------------------------- */
+
+.scroll-cue {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+}
+
+.scroll-arrow {
+  font-size: 1rem;
+
+  animation: floatArrow 1.8s ease-in-out infinite;
+}
+
+@keyframes floatArrow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+
+/* -------------------------
+   SETS
+------------------------- */
+
+.sets,
+.contact {
+  position: relative;
+
+  padding: 100px 5vw;
+}
+
+.section-label,
+.set-type {
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+}
+
+.set-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 40px;
+
+  margin-top: 50px;
+}
+
+.set-card {
+  border-top:
+    1px solid currentColor;
+
+  padding-top: 20px;
+}
+
+.set-image {
+  aspect-ratio: 4 / 3;
+
+  background:
+    rgba(0, 0, 0, 0.07);
+
+  margin-bottom: 20px;
+}
+
+.night-mode .set-image {
+  background:
+    rgba(255, 255, 255, 0.07);
+}
+
+.set-card h2 {
+  font-size: 2rem;
+}
+
+
+/* -------------------------
+   CONTACT
+------------------------- */
+
+.social-links {
+  display: flex;
+  gap: 25px;
+
+  margin-top: 40px;
+}
+
+
+/* -------------------------
+   MOBILE
+------------------------- */
+
 @media (max-width: 700px) {
+
+  .hero {
+    padding:
+      24px 22px
+      32px;
+  }
+
+  .wordmark {
+    font-size:
+      clamp(3.4rem, 17vw, 6rem);
+
+    letter-spacing: -0.08em;
+  }
+
+  .sparkle {
+    font-size: 0.16em;
+  }
+
+  .hero-bottom {
+    margin-top: 35px;
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 24px;
+  }
+
   .set-grid {
     grid-template-columns: 1fr;
+  }
+
+  .sets,
+  .contact {
+    padding:
+      80px 22px;
   }
 }
