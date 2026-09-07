@@ -10,63 +10,148 @@
 <body class="day-mode">
 
   <header class="hero">
-    <nav class="nav">
-      <div class="logo">Princess K</div>
 
-      <button class="mode-toggle" id="modeToggle">
-        <span class="day-label">DAY</span>
-        <span class="night-label">NIGHT</span>
+    <nav class="nav">
+      <a class="logo" href="#">
+        Princess K <span class="mini-sparkle">✦</span>
+      </a>
+
+      <button
+        class="mode-toggle"
+        id="modeToggle"
+        aria-label="Switch between day and night"
+        type="button"
+      >
+        <span class="toggle-option day-label">DAY</span>
+
+        <span class="toggle-track">
+          <span class="toggle-dot"></span>
+        </span>
+
+        <span class="toggle-option night-label">NIGHT</span>
       </button>
     </nav>
 
-    <div class="hero-content">
-      <p class="eyebrow">DJ / SYDNEY</p>
 
-      <h1>Princess K</h1>
-
-      <p class="hero-copy" id="heroCopy">
-        Soft grooves, sunny afternoons, and songs that make you linger.
-      </p>
+    <div class="hero-atmosphere" aria-hidden="true">
+      <div class="glow glow-one"></div>
+      <div class="glow glow-two"></div>
+      <div class="grain"></div>
     </div>
+
+
+    <div class="hero-content">
+
+      <p class="eyebrow">
+        DJ &nbsp;/&nbsp; SYDNEY
+      </p>
+
+      <h1 class="wordmark" aria-label="Princess K">
+
+        <span class="word-princess">
+          PRINCESS
+        </span>
+
+        <span class="word-k">
+          K
+        </span>
+
+        <span class="sparkle" aria-hidden="true">
+          ✦
+        </span>
+
+      </h1>
+
+      <div class="hero-bottom">
+
+        <p class="tagline">
+          SAME GIRL.<br>
+          DIFFERENT HOUR.
+        </p>
+
+        <p class="location">
+          SYDNEY / BEYOND
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="scroll-cue">
+      <span>SCROLL</span>
+      <span class="scroll-arrow">↓</span>
+    </div>
+
   </header>
+
 
   <main>
 
     <section class="sets">
-      <p class="section-label">SELECTED SETS</p>
+
+      <p class="section-label">
+        SELECTED SETS
+      </p>
 
       <div class="set-grid" id="setGrid">
 
         <article class="set-card">
           <div class="set-image"></div>
-          <p class="set-type">CAFÉ / DAYTIME</p>
+
+          <p class="set-type">
+            CAFÉ / DAYTIME
+          </p>
+
           <h2>Sunday Slowdown</h2>
-          <p>Soul, R&B, disco and warm house.</p>
+
+          <p>
+            Soul, R&B, disco and warm house.
+          </p>
         </article>
+
 
         <article class="set-card">
           <div class="set-image"></div>
-          <p class="set-type">BEACH / SUNSET</p>
+
+          <p class="set-type">
+            BEACH / SUNSET
+          </p>
+
           <h2>Golden Hour</h2>
-          <p>Balearic grooves and soft electronic.</p>
+
+          <p>
+            Balearic grooves and soft electronic.
+          </p>
         </article>
 
       </div>
+
     </section>
 
+
     <section class="contact">
-      <p class="section-label">BOOKINGS & MIXES</p>
-      <h2>Find me after dark.</h2>
+
+      <p class="section-label">
+        BOOKINGS & MIXES
+      </p>
+
+      <h2>
+        Find me after dark.
+      </h2>
 
       <div class="social-links">
         <a href="#">SoundCloud</a>
         <a href="#">Instagram</a>
         <a href="mailto:hello@example.com">Email</a>
       </div>
+
     </section>
 
   </main>
 
+
   <script src="script.js"></script>
+
 </body>
 </html>
