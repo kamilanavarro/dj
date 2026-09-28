@@ -68,7 +68,6 @@ a {
   font-size: 0.82rem;
   font-weight: 300;
   letter-spacing: 0.03em;
-  text-transform: none;
 }
 
 .logo-kay {
@@ -81,44 +80,17 @@ a {
   font-style: normal;
 }
 
-
-/* small 8-point nav star */
-
 .logo-star {
-  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-  display: inline-block;
-  flex: 0 0 auto;
+  margin: 0 0.4em;
 
-  width: 0.65em;
-  height: 0.65em;
-
-  margin: 0 0.35em;
-
-  transform: rotate(45deg);
-}
-
-.logo-star::before,
-.logo-star::after {
-  content: "";
-
-  position: absolute;
-  left: 50%;
-  top: 50%;
-
-  background: currentColor;
-
-  transform: translate(-50%, -50%);
-}
-
-.logo-star::before {
-  width: 0.12em;
-  height: 0.75em;
-}
-
-.logo-star::after {
-  width: 0.75em;
-  height: 0.12em;
+  font-size: 0.7em;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1;
 }
 
 
@@ -213,7 +185,7 @@ a {
 }
 
 
-/* daytime sunlight */
+/* DAY */
 
 .glow-one {
   width: 48vw;
@@ -236,7 +208,7 @@ a {
 }
 
 
-/* nighttime glow */
+/* NIGHT */
 
 .night-mode .glow-one {
   background: rgba(222, 87, 31, 0.22);
@@ -255,7 +227,7 @@ a {
 }
 
 
-/* subtle texture */
+/* GRAIN */
 
 .grain {
   position: absolute;
@@ -291,13 +263,6 @@ a {
   width: 100%;
 }
 
-.eyebrow {
-  margin: 0 0 22px;
-
-  font-size: 0.68rem;
-  letter-spacing: 0.18em;
-}
-
 
 /* -------------------------
    WORDMARK — KAY ✦ ESQUE
@@ -316,14 +281,19 @@ a {
   font-size: clamp(4.4rem, 13.4vw, 13rem);
   font-weight: 900;
 
-  letter-spacing: -0.075em;
-  line-height: 0.82;
+  /*
+    IMPORTANT:
+    no negative letter-spacing on the whole
+    wordmark because it pulls the star into the y
+  */
+  letter-spacing: 0;
 
+  line-height: 0.82;
   white-space: nowrap;
 }
 
 
-/* KAY — filled during day */
+/* KAY */
 
 .word-kay {
   display: inline-block;
@@ -332,8 +302,10 @@ a {
   font-weight: 900;
   font-style: italic;
 
-  color: #211c18;
+  /* keep the tight original lettering inside kay */
+  letter-spacing: -0.075em;
 
+  color: #211c18;
   -webkit-text-stroke: 0 transparent;
 
   transition:
@@ -342,60 +314,39 @@ a {
 }
 
 
-/* STAR SEPARATOR */
-
-/* -------------------------
-   STAR SEPARATOR
-------------------------- */
+/* STAR */
 
 .word-star {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  width: 0.72em;
-  flex: 0 0 0.72em;
+  /*
+    The star gets its own independent space.
+    This prevents the italic y from swallowing it.
+  */
+  flex: 0 0 0.52em;
+  width: 0.52em;
+
+  margin-left: 0.08em;
+  margin-right: 0.08em;
 
   font-size: 0.11em;
   font-weight: 400;
   font-style: normal;
+
   line-height: 1;
   letter-spacing: 0;
 
   color: #211c18;
 
+  transform: translateY(-0.01em);
+
   transition: color 0.6s ease;
 }
 
-.night-mode .word-star {
-  color: #f2eadf;
-}
 
-.night-mode .word-star {
-  color: #f2eadf;
-}
-
-.night-mode .word-star {
-  color: #f2eadf;
-}
-
-
-/* small nav star */
-
-.logo-star {
-  display: inline-block;
-
-  margin: 0 0.42em;
-
-  font-size: 0.72em;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1;
-}
-
-
-
-/* ESQUE — outlined during day */
+/* ESQUE */
 
 .word-esque {
   display: inline-block;
@@ -403,6 +354,9 @@ a {
   font-size: 1em;
   font-weight: 900;
   font-style: normal;
+
+  /* tight lettering stays within esque only */
+  letter-spacing: -0.075em;
 
   color: transparent;
 
@@ -420,13 +374,15 @@ a {
 
 .night-mode .word-kay {
   color: transparent;
-
   -webkit-text-stroke: 2px #f2eadf;
+}
+
+.night-mode .word-star {
+  color: #f2eadf;
 }
 
 .night-mode .word-esque {
   color: #f2eadf;
-
   -webkit-text-stroke: 0 transparent;
 }
 
@@ -441,16 +397,6 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-}
-
-.tagline {
-  margin: 0;
-
-  font-size: clamp(1.15rem, 2vw, 1.8rem);
-  font-weight: 700;
-
-  letter-spacing: 0.02em;
-  line-height: 1.08;
 }
 
 .location {
@@ -484,7 +430,6 @@ a {
 }
 
 @keyframes floatArrow {
-
   0%,
   100% {
     transform: translateY(0);
@@ -565,35 +510,21 @@ a {
 @media (max-width: 700px) {
 
   .hero {
-    padding:
-      24px 22px
-      32px;
+    padding: 24px 22px 32px;
   }
 
   .wordmark {
     font-size: clamp(3.2rem, 15.5vw, 6rem);
-
-    letter-spacing: -0.075em;
   }
 
   .word-star {
-    width: 0.68em;
-    flex-basis: 0.68em;
-  }
+    flex-basis: 0.48em;
+    width: 0.48em;
 
-  .star-shape {
-    width: 0.13em;
-    height: 0.13em;
-  }
+    margin-left: 0.07em;
+    margin-right: 0.07em;
 
-  .star-shape::before {
-    width: 0.045em;
-    height: 0.29em;
-  }
-
-  .star-shape::after {
-    width: 0.29em;
-    height: 0.045em;
+    font-size: 0.11em;
   }
 
   .hero-bottom {
@@ -611,7 +542,6 @@ a {
 
   .sets,
   .contact {
-    padding:
-      80px 22px;
+    padding: 80px 22px;
   }
 }
