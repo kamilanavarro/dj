@@ -311,7 +311,11 @@ a {
 
 .portrait-day {
   opacity: 1;
+
+  width: 46vw;
   transform: scale(1.01);
+
+  object-position: center center;
 }
 
 
