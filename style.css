@@ -60,17 +60,26 @@ a {
   color: inherit;
   text-decoration: none;
 
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: 0.82rem;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  text-transform: none;
 }
 
-.mini-sparkle {
+.logo-kay {
+  font-weight: 800;
+  font-style: italic;
+}
+
+.logo-star {
   display: inline-block;
-  margin-left: 3px;
-}
+  position: relative;
+  top: -0.25em;
 
+  margin: 0 0.08em;
+
+  font-size: 0.7em;
+}
 
 /* -------------------------
    DAY / NIGHT TOGGLE
@@ -254,6 +263,11 @@ a {
 ------------------------- */
 
 .wordmark {
+/* -------------------------
+   WORDMARK
+------------------------- */
+
+.wordmark {
   display: flex;
   align-items: baseline;
   flex-wrap: nowrap;
@@ -261,88 +275,78 @@ a {
   margin: 0;
 
   font-family: Arial, sans-serif;
-
-  font-size: clamp(4.4rem, 13.4vw, 13rem);
-  font-weight: 900;
-
-  letter-spacing: -0.075em;
+  font-size: clamp(5rem, 15vw, 14rem);
   line-height: 0.82;
 
   white-space: nowrap;
 }
 
 
-/* DAY:
-   PRINCESS = filled
-   K = outline
-   sparkle = filled
-*/
+/* KAY — the expressive half */
 
-.word-princess {
-  color: #211c18;
-
-  -webkit-text-stroke: 0 transparent;
-
-  transition:
-    color 0.6s ease,
-    -webkit-text-stroke 0.6s ease;
-}
-
-.word-k {
-  margin-left: 0.08em;
-
-  color: transparent;
-
-  -webkit-text-stroke:
-    2px #211c18;
-
-  transition:
-    color 0.6s ease,
-    -webkit-text-stroke 0.6s ease;
-}
-
-.sparkle {
-  align-self: flex-start;
-
-  margin-left: 0.18em;
-  margin-top: -0.1em;
+.word-kay {
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -0.085em;
 
   color: #211c18;
 
-  font-size: 0.18em;
-  line-height: 1;
+  transition:
+    color 0.6s ease,
+    -webkit-text-stroke 0.6s ease,
+    opacity 0.6s ease;
+}
+
+
+/* * — the hinge */
+
+.word-star {
+  position: relative;
+  top: -0.55em;
+
+  margin:
+    0 0.07em
+    0 0.12em;
+
+  font-size: 0.25em;
+  font-weight: 400;
+  font-style: normal;
+
+  color: #211c18;
 
   transition:
     color 0.6s ease,
-    -webkit-text-stroke 0.6s ease;
+    transform 0.6s ease;
 }
 
 
-/* NIGHT:
-   PRINCESS = outline
-   K = filled
-   sparkle = outline
-*/
+/* ESQUE — quieter / editorial */
 
-.night-mode .word-princess {
-  color: transparent;
+.word-esque {
+  font-weight: 300;
+  letter-spacing: -0.055em;
 
-  -webkit-text-stroke:
-    2px #f2eadf;
+  color: #211c18;
+
+  transition:
+    color 0.6s ease,
+    opacity 0.6s ease;
 }
 
-.night-mode .word-k {
+
+/* NIGHT */
+
+.night-mode .word-kay,
+.night-mode .word-star,
+.night-mode .word-esque {
   color: #f2eadf;
-
-  -webkit-text-stroke:
-    0 transparent;
 }
 
-.night-mode .sparkle {
-  color: transparent;
 
-  -webkit-text-stroke:
-    1px #f2eadf;
+/* tiny bit of personality on mode change */
+
+.night-mode .word-star {
+  transform: rotate(12deg);
 }
 
 
@@ -495,9 +499,9 @@ a {
     letter-spacing: -0.08em;
   }
 
-  .sparkle {
-    font-size: 0.16em;
-  }
+  .word-star {
+  font-size: 0.22em;
+}
 
   .hero-bottom {
     margin-top: 35px;
