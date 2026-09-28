@@ -482,11 +482,7 @@ a {
 
   margin-top: 70px;
 
-  font-family:
-    "Courier New",
-    Courier,
-    monospace;
-
+ font-family: "Courier Prime", monospace;
   position: relative;
   z-index: 3;
 }
