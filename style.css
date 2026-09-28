@@ -314,21 +314,19 @@ a {
 
 .word-star {
   display: block;
-
   flex: 0 0 auto;
 
-  font-size: 0.11em;
+  margin-left: 0.40em;
+  margin-right: 0.40em;
+
+  font-size: 0.13em;
   font-weight: 400;
   font-style: normal;
+
   line-height: 1;
+  letter-spacing: 0;
 
   color: #211c18;
-
-  /* gap between star and esque */
-  margin-right: 0.20em;
-
-  /* tiny optical vertical adjustment */
-  transform: translateY(-0.03em);
 
   transition: color 0.6s ease;
 }
