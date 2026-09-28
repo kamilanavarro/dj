@@ -315,7 +315,7 @@ a {
   width: 46vw;
   transform: scale(1.01);
 
-  object-position: 15% 95%;
+  object-position: -15% 95%;
 }
 
 
@@ -324,6 +324,8 @@ a {
 .portrait-night {
   opacity: 0;
   transform: scale(1.02);
+
+    object-position: center 40%;
 }
 
 
