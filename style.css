@@ -259,18 +259,52 @@ a {
 
 
 /* -------------------------
-   WORDMARK — KAY*ESQUE
+   WORDMARK — KAY * ESQUE
 ------------------------- */
+
+.wordmark {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  margin: 0;
+
+  font-family: Arial, sans-serif;
+  font-size: clamp(4.4rem, 13.4vw, 13rem);
+  font-weight: 900;
+
+  letter-spacing: -0.075em;
+  line-height: 0.82;
+
+  white-space: nowrap;
+}
+
+
+/* DAY — KAY filled */
+
+.word-kay {
+  color: #211c18;
+
+  font-weight: 900;
+  font-style: italic;
+
+  -webkit-text-stroke: 0 transparent;
+
+  transition:
+    color 0.6s ease,
+    -webkit-text-stroke 0.6s ease;
+}
+
+
+/* STAR — always filled, changes black → white */
 
 .word-star {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  align-self: center;
-  position: static;
+  flex-shrink: 0;
 
-  /* breathing room between kay * esque */
   margin-left: 0.20em;
   margin-right: 0.20em;
 
@@ -279,20 +313,55 @@ a {
   font-style: normal;
   line-height: 1;
 
-  /* DAY */
   color: #211c18;
   -webkit-text-stroke: 0 transparent;
 
-  transition:
-    color 0.6s ease,
-    transform 0.6s ease;
+  transition: color 0.6s ease;
 }
 
-/* NIGHT */
+
+/* DAY — ESQUE outlined */
+
+.word-esque {
+  color: transparent;
+
+  font-weight: 900;
+  font-style: normal;
+
+  -webkit-text-stroke: 2px #211c18;
+
+  transition:
+    color 0.6s ease,
+    -webkit-text-stroke 0.6s ease;
+}
+
+
+/* NIGHT — KAY outlined */
+
+.night-mode .word-kay {
+  color: transparent;
+
+  -webkit-text-stroke: 2px #f2eadf;
+}
+
+
+/* NIGHT — STAR white + filled */
+
 .night-mode .word-star {
   color: #f2eadf;
+
   -webkit-text-stroke: 0 transparent;
 }
+
+
+/* NIGHT — ESQUE filled */
+
+.night-mode .word-esque {
+  color: #f2eadf;
+
+  -webkit-text-stroke: 0 transparent;
+}
+
 /* -------------------------
    HERO TAGLINE
 ------------------------- */
