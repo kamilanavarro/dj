@@ -253,6 +253,90 @@ a {
 
 
 /* -------------------------
+   DAY / NIGHT PORTRAITS
+------------------------- */
+
+.hero-portraits {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-portrait {
+  position: absolute;
+
+  top: 0;
+  right: 0;
+
+  width: 38vw;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center center;
+
+  /*
+    Dissolves the left edge of the photograph
+    into the hero background.
+  */
+  -webkit-mask-image:
+    linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.12) 12%,
+      rgba(0, 0, 0, 0.55) 28%,
+      black 45%,
+      black 100%
+    );
+
+  mask-image:
+    linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.12) 12%,
+      rgba(0, 0, 0, 0.55) 28%,
+      black 45%,
+      black 100%
+    );
+
+  transition:
+    opacity 0.8s ease,
+    transform 1s ease;
+}
+
+
+/* DAY PORTRAIT */
+
+.portrait-day {
+  opacity: 1;
+  transform: scale(1.01);
+}
+
+
+/* NIGHT PORTRAIT */
+
+.portrait-night {
+  opacity: 0;
+  transform: scale(1.02);
+}
+
+
+/* PORTRAIT TOGGLE */
+
+.night-mode .portrait-day {
+  opacity: 0;
+  transform: scale(1.02);
+}
+
+.night-mode .portrait-night {
+  opacity: 1;
+  transform: scale(1.01);
+}
+
+
+/* -------------------------
    HERO CONTENT
 ------------------------- */
 
@@ -263,10 +347,6 @@ a {
   width: 100%;
 }
 
-
-/* -------------------------
-   WORDMARK — KAY ✦ ESQUE
-------------------------- */
 
 /* -------------------------
    WORDMARK — KAY ✦ ESQUE
@@ -316,8 +396,8 @@ a {
   display: block;
   flex: 0 0 auto;
 
-margin-left: 0.32em;
-margin-right: 0.40em;
+  margin-left: 0.32em;
+  margin-right: 0.40em;
 
   font-size: 0.145em;
   font-weight: 400;
@@ -351,7 +431,7 @@ margin-right: 0.40em;
 }
 
 
-/* NIGHT */
+/* NIGHT WORDMARK */
 
 .night-mode .word-kay {
   color: transparent;
@@ -366,6 +446,7 @@ margin-right: 0.40em;
   color: #f2eadf;
   -webkit-text-stroke: 0 transparent;
 }
+
 
 /* -------------------------
    HERO BOTTOM
@@ -491,6 +572,28 @@ margin-right: 0.40em;
 
   .hero {
     padding: 24px 22px 32px;
+  }
+
+  .hero-portrait {
+    width: 52vw;
+
+    -webkit-mask-image:
+      linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(0, 0, 0, 0.25) 20%,
+        black 50%,
+        black 100%
+      );
+
+    mask-image:
+      linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(0, 0, 0, 0.25) 20%,
+        black 50%,
+        black 100%
+      );
   }
 
   .wordmark {
