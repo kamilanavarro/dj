@@ -626,7 +626,7 @@ body.night-mode .hero-logo .logo-night {
       Same zoom as before.
       Only moved slightly upward.
     */
-    transform: translateY(-4%) scale(1.35);
+    transform: translateY(-24%) scale(1.35);
 
     -webkit-mask-image:
       linear-gradient(
