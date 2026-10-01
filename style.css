@@ -544,6 +544,16 @@ body.night-mode .hero-logo .logo-night {
   background: rgba(0, 0, 0, 0.07);
 
   margin-bottom: 20px;
+
+  overflow: hidden;
+}
+
+.set-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  display: block;
 }
 
 .night-mode .set-image {
@@ -560,16 +570,6 @@ body.night-mode .hero-logo .logo-night {
   display: block;
 }
 
-.set-image {
-  overflow: hidden;
-}
-
-.set-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
 
 /* -------------------------
    CONTACT
@@ -615,18 +615,52 @@ body.night-mode .hero-logo .logo-night {
       );
   }
 
+
+  /* DAY PORTRAIT — MOBILE ONLY */
+
+  .portrait-day {
+    width: 68vw;
+    object-position: center 82%;
+
+    -webkit-mask-image:
+      linear-gradient(
+        to right,
+        transparent 0%,
+        transparent 18%,
+        rgba(0, 0, 0, 0.08) 34%,
+        rgba(0, 0, 0, 0.30) 50%,
+        rgba(0, 0, 0, 0.70) 68%,
+        black 82%
+      );
+
+    mask-image:
+      linear-gradient(
+        to right,
+        transparent 0%,
+        transparent 18%,
+        rgba(0, 0, 0, 0.08) 34%,
+        rgba(0, 0, 0, 0.30) 50%,
+        rgba(0, 0, 0, 0.70) 68%,
+        black 82%
+      );
+  }
+
+
+  /* HERO LOGO */
+
   .hero-logo img {
     width: 78vw;
     max-width: none;
     transform: translateX(-3%);
   }
 
+
   .hero-bottom {
     margin-top: 35px;
   }
 
   .hero-about {
-    width: 84%;
+    width: min(100%, 520px);
     margin-top: 46px;
   }
 
@@ -650,37 +684,4 @@ body.night-mode .hero-logo .logo-night {
   .contact {
     padding: 80px 22px;
   }
-}
-@media (max-width: 700px) {
-
-  .portrait-day {
-    width: 68vw;
-    object-position: center 82%;
-
-    -webkit-mask-image: linear-gradient(
-      to right,
-      transparent 0%,
-      transparent 18%,
-      rgba(0, 0, 0, 0.08) 34%,
-      rgba(0, 0, 0, 0.30) 50%,
-      rgba(0, 0, 0, 0.70) 68%,
-      black 82%
-    );
-
-    mask-image: linear-gradient(
-      to right,
-      transparent 0%,
-      transparent 18%,
-      rgba(0, 0, 0, 0.08) 34%,
-      rgba(0, 0, 0, 0.30) 50%,
-      rgba(0, 0, 0, 0.70) 68%,
-      black 82%
-    );
-  }
-
-  .portrait-night {
-    width: 75vw;
-    object-position: center 40%;
-  }
-
 }
