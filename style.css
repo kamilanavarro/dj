@@ -363,6 +363,7 @@ a {
   width: min(700px, 82vw);
   height: auto;
   display: block;
+  transform: translateX(-2.5%);
 }
 
 /* DAY LOGO */
@@ -605,6 +606,7 @@ body.night-mode .hero-logo .logo-night {
   .hero-logo img {
     width: 78vw;
     max-width: none;
+    transform: translateX(-3%);
   }
 
   .hero-bottom {
