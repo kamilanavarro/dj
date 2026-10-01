@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="360" viewBox="0 0 1500 360">
+<title>kayesque_primary</title><g font-family="Arial, Arimo, Helvetica, sans-serif">
+<text x="55" y="270" font-size="270" font-weight="900" font-style="italic" letter-spacing="-18" fill="#211C18" stroke="none" stroke-width="0" paint-order="stroke">kay</text>
+<path d="M 0 -28 C 3 -10 10 -3 28 0 C 10 3 3 10 0 28 C -3 10 -10 3 -28 0 C -10 -3 -3 -10 0 -28 Z" transform="translate(512 190) scale(0.88)" fill="#211C18"/>
+<text x="550" y="270" font-size="270" font-weight="900" letter-spacing="-18" fill="none" stroke="#211C18" stroke-width="4" paint-order="stroke">esque</text>
+</g></svg>
