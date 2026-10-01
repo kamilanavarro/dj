@@ -623,10 +623,10 @@ body.night-mode .hero-logo .logo-night {
     object-position: center 82%;
 
     /*
-      Zoom the DAY image itself.
-      Night is unchanged.
+      Same zoom as before.
+      Only moved slightly upward.
     */
-    transform: scale(1.35);
+    transform: translateY(-4%) scale(1.35);
 
     -webkit-mask-image:
       linear-gradient(
