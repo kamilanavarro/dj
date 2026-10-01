@@ -626,7 +626,7 @@ body.night-mode .hero-logo .logo-night {
   }
 
   .hero-about {
-    width: min(100%, 520px);
+    width: 84%;
     margin-top: 46px;
   }
 
