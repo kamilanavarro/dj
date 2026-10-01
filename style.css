@@ -651,3 +651,9 @@ body.night-mode .hero-logo .logo-night {
     padding: 80px 22px;
   }
 }
+@media (max-width: 700px) {
+  .portrait-day {
+    width: 75vw;
+    object-position: center 95%;
+  }
+}
