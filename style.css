@@ -654,26 +654,26 @@ body.night-mode .hero-logo .logo-night {
 @media (max-width: 700px) {
   .portrait-day {
     width: 68vw;
-    object-position: center 95%;
+    object-position: center 82%;
 
-    -webkit-mask-image: linear-gradient(
-      to right,
-      transparent 0%,
-      transparent 12%,
-      rgba(0, 0, 0, 0.12) 28%,
-      rgba(0, 0, 0, 0.55) 43%,
-      black 60%,
-      black 100%
-    );
+   -webkit-mask-image: linear-gradient(
+  to right,
+  transparent 0%,
+  transparent 18%,
+  rgba(0, 0, 0, 0.08) 34%,
+  rgba(0, 0, 0, 0.30) 50%,
+  rgba(0, 0, 0, 0.70) 68%,
+  black 82%
+);
 
-    mask-image: linear-gradient(
-      to right,
-      transparent 0%,
-      transparent 12%,
-      rgba(0, 0, 0, 0.12) 28%,
-      rgba(0, 0, 0, 0.55) 43%,
-      black 60%,
-      black 100%
-    );
+mask-image: linear-gradient(
+  to right,
+  transparent 0%,
+  transparent 18%,
+  rgba(0, 0, 0, 0.08) 34%,
+  rgba(0, 0, 0, 0.30) 50%,
+  rgba(0, 0, 0, 0.70) 68%,
+  black 82%
+);
   }
 }
