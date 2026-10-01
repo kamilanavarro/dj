@@ -628,27 +628,25 @@ body.night-mode .hero-logo .logo-night {
     */
     transform: translateY(-24%) scale(1.35);
 
-    -webkit-mask-image:
-      linear-gradient(
-        to right,
-        transparent 0%,
-        transparent 18%,
-        rgba(0, 0, 0, 0.08) 34%,
-        rgba(0, 0, 0, 0.30) 50%,
-        rgba(0, 0, 0, 0.70) 68%,
-        black 82%
-      );
+   -webkit-mask-image: linear-gradient(
+  to right,
+  transparent 0%,
+  rgba(0, 0, 0, 0.12) 12%,
+  rgba(0, 0, 0, 0.35) 28%,
+  rgba(0, 0, 0, 0.65) 45%,
+  rgba(0, 0, 0, 0.90) 62%,
+  black 75%
+);
 
-    mask-image:
-      linear-gradient(
-        to right,
-        transparent 0%,
-        transparent 18%,
-        rgba(0, 0, 0, 0.08) 34%,
-        rgba(0, 0, 0, 0.30) 50%,
-        rgba(0, 0, 0, 0.70) 68%,
-        black 82%
-      );
+mask-image: linear-gradient(
+  to right,
+  transparent 0%,
+  rgba(0, 0, 0, 0.12) 12%,
+  rgba(0, 0, 0, 0.35) 28%,
+  rgba(0, 0, 0, 0.65) 45%,
+  rgba(0, 0, 0, 0.90) 62%,
+  black 75%
+);
   }
 
 
