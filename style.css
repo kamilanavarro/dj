@@ -688,4 +688,10 @@ mask-image: linear-gradient(
   .contact {
     padding: 80px 22px;
   }
+
+  .night-mode .portrait-day {
+    opacity: 0;
+    transform: translateY(-24%) scale(1.35);
+  }
+
 }
