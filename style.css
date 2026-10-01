@@ -616,11 +616,17 @@ body.night-mode .hero-logo .logo-night {
   }
 
 
-  /* DAY PORTRAIT — SAME DIMENSIONS AS NIGHT */
+  /* DAY PORTRAIT — MOBILE ONLY */
 
   .portrait-day {
     width: 52vw;
     object-position: center 82%;
+
+    /*
+      Zoom the DAY image itself.
+      Night is unchanged.
+    */
+    transform: scale(1.35);
 
     -webkit-mask-image:
       linear-gradient(
