@@ -351,101 +351,38 @@ a {
 
 
 /* -------------------------
-   WORDMARK — KAY ✦ ESQUE
+   HERO LOGO
 ------------------------- */
 
-.wordmark {
-  display: flex;
-  align-items: center;
-
+.hero-logo {
   width: 100%;
   margin: 0;
-
-  font-family: Arial, sans-serif;
-  font-size: clamp(4.4rem, 13.4vw, 13rem);
-  font-weight: 900;
-  line-height: 0.82;
-
-  white-space: nowrap;
 }
 
-
-/* KAY */
-
-.word-kay {
+.hero-logo img {
+  width: min(470px, 80vw);
+  height: auto;
   display: block;
-
-  font-size: 1em;
-  font-weight: 900;
-  font-style: italic;
-  letter-spacing: -0.075em;
-
-  color: #211c18;
-  -webkit-text-stroke: 0 transparent;
-
-  margin-right: 0.20em;
-
-  transition:
-    color 0.6s ease,
-    -webkit-text-stroke 0.6s ease;
 }
 
+/* DAY LOGO */
 
-/* STAR */
-
-.word-star {
+.hero-logo .logo-day {
   display: block;
-  flex: 0 0 auto;
-
-  margin-left: 0.32em;
-  margin-right: 0.40em;
-
-  font-size: 0.145em;
-  font-weight: 400;
-  font-style: normal;
-
-  line-height: 1;
-  letter-spacing: 0;
-
-  color: #211c18;
-
-  transition: color 0.6s ease;
 }
 
+.hero-logo .logo-night {
+  display: none;
+}
 
-/* ESQUE */
+/* NIGHT LOGO */
 
-.word-esque {
+body.night-mode .hero-logo .logo-day {
+  display: none;
+}
+
+body.night-mode .hero-logo .logo-night {
   display: block;
-
-  font-size: 1em;
-  font-weight: 900;
-  font-style: normal;
-  letter-spacing: -0.075em;
-
-  color: transparent;
-  -webkit-text-stroke: 2px #211c18;
-
-  transition:
-    color 0.6s ease,
-    -webkit-text-stroke 0.6s ease;
-}
-
-
-/* NIGHT WORDMARK */
-
-.night-mode .word-kay {
-  color: transparent;
-  -webkit-text-stroke: 2px #f2eadf;
-}
-
-.night-mode .word-star {
-  color: #f2eadf;
-}
-
-.night-mode .word-esque {
-  color: #f2eadf;
-  -webkit-text-stroke: 0 transparent;
 }
 
 
@@ -620,6 +557,7 @@ a {
   display: block;
 }
 
+
 /* -------------------------
    CONTACT
 ------------------------- */
@@ -664,18 +602,9 @@ a {
       );
   }
 
-  .wordmark {
-    font-size: clamp(3.2rem, 15.5vw, 6rem);
-  }
-
-  .word-star {
-    flex-basis: 0.48em;
-    width: 0.48em;
-
-    margin-left: 0.07em;
-    margin-right: 0.07em;
-
-    font-size: 0.11em;
+  .hero-logo img {
+    width: 72vw;
+    max-width: 430px;
   }
 
   .hero-bottom {
